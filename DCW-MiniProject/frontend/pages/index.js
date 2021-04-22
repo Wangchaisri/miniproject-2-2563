@@ -46,7 +46,7 @@ const index = () => {
   return (
     <Layout>
        <Head>
-        <title>Home Page</title>
+        <title>Thai Dessert by RoseBenz</title>
     </Head>
     <div className={styles.container}><Navbar />
       <div className={styles.title}>
@@ -54,8 +54,31 @@ const index = () => {
       <div className={styles.list}>
         {showStudents()}
       </div>
-      
     </div>
+    <h1>Thai Dessert by RoseBenz</h1>
+    <h2><b>ขนมแนะนำ</b></h2>
+    ขนมบุหลันดั้นเมฆ<br/>
+    ขนมชั้น<br/>
+    ขนมจ่ามงกุฎ (ดาราทอง หรือ ทองเอกกระจัง)<br/>
+    ขนมเสน่ห์จันทร์<br/>
+    ขนมวุ้นลูกชุบ<br/>
+    ขนมกลีบลำดวน<br/>
+    ขนมกระเช้าสีดา<br/>
+    ขนมสัมปันนี<br/>
+    ขนมน้ำดอกไม้<br/>
+    ช่อม่วงอัญชัน<br/>
+    ขนมลืมกลืน<br/>
+    ขนมไทย: ทอง ๙ มงคล<br/>
+    <li>ทองหยิบ</li>
+    <li>ทองหยอด</li>
+    <li>ฝอยทอง</li>
+    <li>ทองเอก</li>
+    <li>ทองพลุ</li>
+    <li>ทองนพคุณ</li>
+    <li>ทองชมพูนุช</li>
+    <li>ทองม้วน</li>
+    <li>ทองทัต</li>
+    <li>ทองอัฐ</li>
     </Layout>
   );
 };
