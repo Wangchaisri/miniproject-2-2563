@@ -10,7 +10,7 @@ const admin = ({ token }) => {
   const [ชื่อขนมไทย, setName] = useState("");
   const [หมายถึง, setSurname] = useState("");
   const [นิยม, setMajor] = useState("");
-  const [สี, setGPA] = useState(0);
+  const [ราคา, setPrice] = useState(0);
   const [student, setStudent] = useState({});
   useEffect(() => {
     getStudents();
@@ -45,7 +45,7 @@ const admin = ({ token }) => {
       ชื่อขนมไทย,
       หมายถึง,
       นิยม,
-      สี,
+      ราคา,
     });
     console.log(result);
     getStudents();
@@ -61,7 +61,7 @@ const admin = ({ token }) => {
       ชื่อขนมไทย,
       หมายถึง,
       นิยม,
-      สี,
+      ราคา,
     });
     console.log(result);
     getStudents();
@@ -75,7 +75,7 @@ const admin = ({ token }) => {
             <b>ชื่อขนมไทย:</b> {item.name} <br />
             <b>หมายถึง:</b> {item.surname} <br />
             <b>นิยม:</b> {item.major} <br />
-            <b>สี:</b> {item.GPA}
+            <b>ราคา:</b> {item.Price}
             <div className={styles.edit_button}>
               <button
                 className={styles.button_get}
@@ -127,22 +127,22 @@ const admin = ({ token }) => {
           name="นิยม"
           onChange={(e) => setMajor(e.target.value)}
         ></input>
-        สี:
+        ราคา:
         <input
           type="number"
-          name="สี"
-          onChange={(e) => setGPA(e.target.value)}
+          name="ราคา"
+          onChange={(e) => setPrice(e.target.value)}
         ></input>
         <button
           className={styles.button_add}
-          onClick={() => addStudent(ชื่อขนมไทย, หมายถึง, นิยม, สี)}
+          onClick={() => addStudent(ชื่อขนมไทย, หมายถึง, นิยม, ราคา)}
         >
           Add
         </button>
       </div>
 
       <div className={styles.list}>{showStudents()}</div>
-      <div className={styles.list1}><b><i><ins>(selected student)</ins></i></b> <b>  ชื่อขนมไทย:</b>{student.name}<b>  หมายถึง:</b>{student.surname} <b>  นิยม:</b>{student.major}  <b>สี:</b>{student.GPA}</div>
+      <div className={styles.list1}><b><i><ins>(selected student)</ins></i></b> <b>  ชื่อขนมไทย:</b>{student.name}<b>  หมายถึง:</b>{student.surname} <b>  นิยม:</b>{student.major}  <b>ราคา:</b>{student.Price}</div>
     </div>
   );
 };
