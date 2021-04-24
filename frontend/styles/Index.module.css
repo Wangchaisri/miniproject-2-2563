@@ -1,38 +1,40 @@
 .container {
-    width: 100%;
-    height: 100vh;
+    /* width: 100%; */
+    /* height: 100vh; */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: antiquewhite;
+    background-image: url(../styles/img/b55.jpg);
 }
 
 .title {
     font-size: 3rem;
-    margin-bottom: 30px;
-    padding-top: 60px;
+    margin-bottom: 5px;
+    padding-top: 20px;
     padding-bottom: 40px;
     font-weight: bold;
-    color: green;
+    color: #003300;
 }
 
 .list {
     display: flex;
-    margin: 10px;
+    margin: 20px;
 }
 
 .listItem {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width:auto;
+    width:300px;
     align-items: center;
-    margin: 10px;
-    border: 4px solid blueviolet;
+    margin: 65px;
+    border: 4px solid #006600;
     padding: 2rem;
     border-radius: 5px;
+    background-image: url(../styles/img/jh.jpg);
+    
 }
 .listItem > div{
     margin: 5px 0px;
