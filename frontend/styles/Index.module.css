@@ -56,11 +56,11 @@
 }
 
 .btn {
-    background-color: red;
+    background-color: #006600;
     color: whitesmoke;
     font-size: 1rem;
     margin-top: 10px;
-    border: 2px solid red;
+    border: 2px solid #006600;
 }
 .btn:hover{
     background-color: brown;

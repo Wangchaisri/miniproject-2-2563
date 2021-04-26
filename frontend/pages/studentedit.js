@@ -7,10 +7,10 @@ const URL = "http://localhost/api/students";
 const admin = ({ token }) => {
   const [user, setUser] = useState({});
   const [students, setStudents] = useState({});
-  const [ชื่อขนมไทย, setName] = useState("");
-  const [หมายถึง, setSurname] = useState("");
-  const [นิยม, setMajor] = useState("");
-  const [ราคา, setPrice] = useState(0);
+  const [Dessert, setDessert] = useState("");
+  const [Mean, setMean] = useState("");
+  const [Popular, setPopular] = useState("");
+  const [Price, setPrice] = useState(0);
   const [student, setStudent] = useState({});
   useEffect(() => {
     getStudents();
@@ -42,10 +42,10 @@ const admin = ({ token }) => {
 
   const addStudent = async () => {
     let result = await axios.post(URL, {
-      ชื่อขนมไทย,
-      หมายถึง,
-      นิยม,
-      ราคา,
+      Dessert,
+      Mean,
+      Popular,
+      Price,
     });
     console.log(result);
     getStudents();
@@ -58,10 +58,10 @@ const admin = ({ token }) => {
 
   const updateStudent = async (id) => {
     let result = await axios.put(`${URL}/${id}`, {
-      ชื่อขนมไทย,
-      หมายถึง,
-      นิยม,
-      ราคา,
+      Dessert,
+      Mean,
+      Popular,
+      Price,
     });
     console.log(result);
     getStudents();
@@ -72,9 +72,9 @@ const admin = ({ token }) => {
       return students.map((item, index) => {
         return (
           <div className={styles.listItem} key={index}>
-            <b>ชื่อขนมไทย:</b> {item.name} <br />
-            <b>หมายถึง:</b> {item.surname} <br />
-            <b>นิยม:</b> {item.major} <br />
+            <b>ชื่อขนมไทย:</b> {item.Dessert} <br />
+            <b>หมายถึง:</b> {item.Mean} <br />
+            <b>นิยม:</b> {item.Popular} <br />
             <b>ราคา:</b> {item.Price} ฿
             <div className={styles.edit_button}>
               <button
@@ -106,26 +106,26 @@ const admin = ({ token }) => {
   return (
     <div className={styles.container}>
       <Navbar />
-      <h1><ins>Student Data Edit </ins></h1>
+      <h1><ins>Thai Dessert Data Edit </ins></h1>
       <div className={styles.form_add}>
-        <h2>Add Students</h2>
+        <h2>Add Thai Dessert</h2>
         ชื่อขนมไทย:
         <input
           type="text"
           name="ชื่อขนมไทย"
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setDessert(e.target.value)}
         ></input>
         หมายถึง:
         <input
           type="text"
           name="หมายถึง"
-          onChange={(e) => setSurname(e.target.value)}
+          onChange={(e) => setMean(e.target.value)}
         ></input>
         นิยม:
         <input
           type="text"
           name="นิยม"
-          onChange={(e) => setMajor(e.target.value)}
+          onChange={(e) => setPopular(e.target.value)}
         ></input>
         ราคา:
         <input
@@ -135,14 +135,14 @@ const admin = ({ token }) => {
         ></input>฿
         <button
           className={styles.button_add}
-          onClick={() => addStudent(ชื่อขนมไทย, หมายถึง, นิยม, ราคา)}
+          onClick={() => addStudent(Dessert, Mean, Popular, Price)}
         >
           Add
         </button>
       </div>
 
       <div className={styles.list}>{showStudents()}</div>
-      <div className={styles.list1}><b><i><ins>(selected student)</ins></i></b> <b>  ชื่อขนมไทย:</b>{student.name}<b>  หมายถึง:</b>{student.surname} <b>  นิยม:</b>{student.major}  <b>ราคา:</b>{student.Price}  </div>
+      <div className={styles.list1}><b><i><ins>(Selected Thai Dessert)</ins></i></b> <b>  ชื่อขนมไทย:</b>{student.Dessert}<b>  หมายถึง:</b>{student.Mean} <b>  นิยม:</b>{student.Popular}  <b>ราคา:</b>{student.Price}  </div>
     </div>
   );
 };

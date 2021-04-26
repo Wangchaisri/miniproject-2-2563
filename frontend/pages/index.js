@@ -29,11 +29,11 @@ const index = () => {
         <Col className="col-lg-4 col-12">     
         {/* lg ขนาด 12/3=4ต้องการให้มีกี่เอาตัวเลขแถวมาหาร, col  */}
           <div className={styles.listItem} key={index}>
-            <div><b>ชื่อขนมไทย:</b> {item.ชื่อขนมไทย}</div>
+            <div><b>ชื่อขนมไทย:</b> {item.Dessert}</div>
             <Image src={item.รูป} alt="me" width="144" height="144" />
 
-            <div><b>หมายถึง:</b> {item.หมายถึง}</div>
-             <div> <b>นิยม:</b> {item.นิยม} </div>
+            <div><b>หมายถึง:</b> {item.Mean}</div>
+             <div> <b>นิยม:</b> {item.Popular} </div>
             <div><b>ราคา:</b> {item.Price} ฿</div>
             
             <div>

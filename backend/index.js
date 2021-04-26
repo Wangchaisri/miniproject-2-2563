@@ -136,9 +136,9 @@ router.get("/", (req, res, next) => {
       console.log(req.body);
       let newstudent = {};
       newstudent.id = students.list.length ? students.list[students.list.length - 1].id + 1 : 1;
-      newstudent.ชื่อขนมไทย = req.body.ชื่อขนมไทย;
-      newstudent.surname= req.body.surname;
-      newstudent.major = req.body.major;
+      newstudent.Dessert = req.body.Dessert;
+      newstudent.Mean= req.body.Mean;
+      newstudent.Popular = req.body.Popular;
       newstudent.Price= req.body.Price;
       students = { list: [...students.list, newstudent] };
       res.json(students);
@@ -152,9 +152,9 @@ router.get("/", (req, res, next) => {
     })
     .put((req, res) => {
       let id = students.list.findIndex((item) => item.id == +req.params.studentid);
-      students.list[id].ชื่อขนมไทย = req.body.ชื่อขนมไทย;
-      students.list[id].surname = req.body.surname;
-      students.list[id].major = req.body.major;
+      students.list[id].Dessert = req.body.Dessert;
+      students.list[id].Mean = req.body.Mean;
+      students.list[id].Popular = req.body.Popular;
       students.list[id].Price = req.body.Price;
       res.json(students.list);
     })

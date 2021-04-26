@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: antiquewhite;
+    background-image: url(../styles/img/b55.jpg);
 }
 
 .content {
@@ -19,7 +19,7 @@
 }
 
 .gridContainer>div {
-    background-color:pink;
+    background-image: url(../styles/img/b55.jpg);
     text-align: left;
     padding: 10px 0;
     font-size: 1.2rem;

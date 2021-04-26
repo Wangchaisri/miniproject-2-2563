@@ -5,6 +5,7 @@ import Navbar from "../components/navbar";
 import styles from "../styles/Home.module.css";
 import axios from "axios";
 import config from "../config/config";
+import Router from "next/router";
 
 export default function Login({ token }) {
   const [username, setUsername] = useState("");
@@ -18,6 +19,7 @@ export default function Login({ token }) {
       console.log("result.data:  ", result.data);
       console.log("token:  ", token);
       setStatus(result.status + ": " + result.data.user.username);
+      Router.push("/studentedit");
     } 
     catch (e) {
       console.log("error: ", JSON.stringify(e.response));
