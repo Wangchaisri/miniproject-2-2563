@@ -75,7 +75,7 @@ const admin = ({ token }) => {
             <b>ชื่อขนมไทย:</b> {item.name} <br />
             <b>หมายถึง:</b> {item.surname} <br />
             <b>นิยม:</b> {item.major} <br />
-            <b>ราคา:</b> {item.Price}
+            <b>ราคา:</b> {item.Price} ฿
             <div className={styles.edit_button}>
               <button
                 className={styles.button_get}
@@ -132,7 +132,7 @@ const admin = ({ token }) => {
           type="number"
           name="ราคา"
           onChange={(e) => setPrice(e.target.value)}
-        ></input>
+        ></input>฿
         <button
           className={styles.button_add}
           onClick={() => addStudent(ชื่อขนมไทย, หมายถึง, นิยม, ราคา)}
@@ -142,7 +142,7 @@ const admin = ({ token }) => {
       </div>
 
       <div className={styles.list}>{showStudents()}</div>
-      <div className={styles.list1}><b><i><ins>(selected student)</ins></i></b> <b>  ชื่อขนมไทย:</b>{student.name}<b>  หมายถึง:</b>{student.surname} <b>  นิยม:</b>{student.major}  <b>ราคา:</b>{student.Price}</div>
+      <div className={styles.list1}><b><i><ins>(selected student)</ins></i></b> <b>  ชื่อขนมไทย:</b>{student.name}<b>  หมายถึง:</b>{student.surname} <b>  นิยม:</b>{student.major}  <b>ราคา:</b>{student.Price}  </div>
     </div>
   );
 };
