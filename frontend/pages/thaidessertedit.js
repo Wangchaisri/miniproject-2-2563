@@ -78,7 +78,7 @@ const admin = ({ token }) => {
         {/* lg ขนาด 15/3=4ต้องการให้มีกี่เอาตัวเลขแถวมาหาร, col  */}
           <div className={styles.listItem} key={index}>
             <b>ชื่อขนมไทย:</b> {item.Dessert} <br />
-            <Image src={item.รูป} alt="me" width="150" height="150" />
+            <Image src={item.รูป} alt="me" width="500" height="500" />
 
             <b>หมายถึง:</b> {item.Mean} <br />
             <b>นิยม:</b> {item.Popular} <br />
