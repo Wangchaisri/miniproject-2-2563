@@ -106,73 +106,73 @@ router.get("/", (req, res, next) => {
   res.send("Respond without authentication");
 });
 
-  let students = {
+  let thaidesserts = {
       list: [
-        { "id": 1, "ชื่อขนมไทย": "จ่ามงกุฎ","หมายถึง": "อยู่ตำแหน่งสูงสุดเสมือนมงกุฎ แสดงถึงความมีเกียรติยศชื่อเสียง","นิยม": "ให้ผู้ที่ได้รับการยกย่องอย่างสูงเนื่องจากมีวิธีทำที่ค่อนข้างยาก" ,"Price": 299 ,"รูป": "/pj1.jpg" },
-        { "id": 2, "ชื่อขนมไทย": "ขนมชั้น","หมายถึง": "การได้เลื่อนชั้น เลื่อนตำแหน่ง เลื่อนยศฐาบรรดาศักดิ์","นิยม": "ทำให้มี 9 ชั้น เพื่อความเป็นสิริมงคล" ,"Price": 159 ,"รูป": "/pj2.jpg" },
-        { "id": 3, "ชื่อขนมไทย": "ทองเอก","หมายถึง": "ความก้าวหน้าทางการงาน","นิยม": "ใช้เป็นขนมอวยพรเมื่อได้เลื่อนตำแหน่งหน้าที่การงาน" ,"Price": 259 ,"รูป": "/pj3.jpg" },
-        { "id": 4, "ชื่อขนมไทย": "ทองหยิบ","หมายถึง": "ความร่ำรวย มั่งคั่ง หยิบจับการงานใดๆ ก็เป็นเงินเป็นทองและชีวิตคู่รุ่งเรือง","นิยม": "ใช้ในงานมงคลหรือใช้เป็นขนมอวยพร" ,"Price": 199 ,"รูป": "/pj4.jpg" },
-        { "id": 5, "ชื่อขนมไทย": "ทองหยอด","หมายถึง": "ขอให้ร่ำรวย มีเงินมีทองใช้","นิยม": "ใช้เป็นขนมอวยพร" ,"Price": 199 ,"รูป": "/pj5.jpg" },
-        { "id": 6, "ชื่อขนมไทย": "ฝอยทอง","หมายถึง": "คู่บ่าวสาวที่จะได้ครองรักกันยั่งยืนและมีอายุยืนยาวเหมือนฝอยทอง","นิยม": "ให้เพื่อเสริมความยืดยาวแก่การแต่งงาน" ,"Price": 259 ,"รูป": "/pj6.jpg" },
-        { "id": 7, "ชื่อขนมไทย": "เม็ดขนุน","หมายถึง": "มีคนช่วยสนับสนุนค้ำจุนในหน้าที่การงาน การดำเนินชีวิต ไม่ว่าจะประกอบกิจการใดๆ ก็จะประสบผลสำเร็จ","นิยม": "ให้เพื่อค้ำจุน" ,"Price": 199 ,"รูป": "/pj7.jpg" },
-        { "id": 8, "ชื่อขนมไทย": "กลีบลำดวน","หมายถึง": "ช่วยทำให้มีชื่อเสียงขจรขจายและยังมีสร้างความงดงามให้กับคู่ชีวิต","นิยม": "ใช้ในงานมงคล" ,"Price": 259 ,"รูป": "/pj8.jpg" },
-        { "id": 9, "ชื่อขนมไทย": "ถ้วยฟู","หมายถึง": "ความเป็นสิริมงคลและความเจริญก้าวหน้าของชีวิตคู่ หรืออวยพรให้รุ่งเรืองเฟื่องฟูเหมือนขนมถ้วยฟู","นิยม": "ใช้ในงานมงคลต่างๆ นำมาใช้ในพิธีแต่งงาน" ,"Price": 99 ,"รูป": "/pj9.jpg" },
-        { "id": 10, "ชื่อขนมไทย": "เสน่ห์จันทน์","หมายถึง": "การเป็นที่รักของทุกคน ไปไหนก็มีแต่คนรักใคร่ และความมีเสน่ห์","นิยม": "ให้เพื่อเสริมความมีเสน่ห์" ,"Price": 359 ,"รูป": "/pj10.jpg" },
-        { "id": 11, "ชื่อขนมไทย": "กงหรือขนมกงเกวียน","หมายถึง": "การอวยพรให้บ่าวสาวครองรักกันชั่วนิรันดร์","นิยม": "ให้ในงานมงคลเพื่ออวยพรให้บ่าวสาว" ,"Price": 159 ,"รูป": "/pj11.jpg" },
-        { "id": 12, "ชื่อขนมไทย": "สามเกลอ","หมายถึง": "ความสามัคคีและไม่มีวันพรากจากกัน","นิยม": "ใช้เป็นขนมเสี่ยงทายในงานแต่ง" ,"Price": 259 ,"รูป": "/pj12.jpg" },
-        { "id": 13, "ชื่อขนมไทย": "ข้าวเหนียวแก้ว","หมายถึง": "จะมีแต่ความเหนียวแน่น เป็นปึกแผ่นมั่นคง","นิยม": "ใช้ในงานมงคลชีวิต" ,"Price": 199 ,"รูป": "/pj13.jpg" },
-        { "id": 14, "ชื่อขนมไทย": "โพรงแสม","หมายถึง": "เปรียบเสมือนเสาบ้านที่จะทำให้บ่าวสาวอยู่กันได้ยั่งยืนตลอดไป","นิยม": "ใช้เป็นขนมแต่งงานที่เก่าแก่ ในสมัยโบราณ" ,"Price": 159 ,"รูป": "/pj14.jpg" },
-        { "id": 15, "ชื่อขนมไทย": "บุหลันดั้นเมฆ","หมายถึง": "เลียนแบบเสมือนดวงจันทร์ลอยอยู่กลางท้องฟ้า","นิยม": "ใช้เป็นขนมบุหลันดั้นเมฆนี้เป็นขนมเสี่ยงทาย เกี่ยวกับ หน้าที่การงาน" ,"Price": 199 ,"รูป": "/pj15.jpg" }
+        { "id": 1, "Dessert": "จ่ามงกุฎ","Mean": "อยู่ตำแหน่งสูงสุดเสมือนมงกุฎ แสดงถึงความมีเกียรติยศชื่อเสียง","Popular": "ให้ผู้ที่ได้รับการยกย่องอย่างสูงเนื่องจากมีวิธีทำที่ค่อนข้างยาก" ,"Price": 299 ,"รูป": "/pj1.jpg" },
+        { "id": 2, "Dessert": "ขนมชั้น","Mean": "การได้เลื่อนชั้น เลื่อนตำแหน่ง เลื่อนยศฐาบรรดาศักดิ์","Popular": "ทำให้มี 9 ชั้น เพื่อความเป็นสิริมงคล" ,"Price": 159 ,"รูป": "/pj2.jpg" },
+        { "id": 3, "Dessert": "ทองเอก","Mean": "ความก้าวหน้าทางการงาน","Popular": "ใช้เป็นขนมอวยพรเมื่อได้เลื่อนตำแหน่งหน้าที่การงาน" ,"Price": 259 ,"รูป": "/pj3.jpg" },
+        { "id": 4, "Dessert": "ทองหยิบ","Mean": "ความร่ำรวย มั่งคั่ง หยิบจับการงานใดๆ ก็เป็นเงินเป็นทองและชีวิตคู่รุ่งเรือง","Popular": "ใช้ในงานมงคลหรือใช้เป็นขนมอวยพร" ,"Price": 199 ,"รูป": "/pj4.jpg" },
+        { "id": 5, "Dessert": "ทองหยอด","Mean": "ขอให้ร่ำรวย มีเงินมีทองใช้","Popular": "ใช้เป็นขนมอวยพร" ,"Price": 199 ,"รูป": "/pj5.jpg" },
+        { "id": 6, "Dessert": "ฝอยทอง","Mean": "คู่บ่าวสาวที่จะได้ครองรักกันยั่งยืนและมีอายุยืนยาวเหมือนฝอยทอง","Popular": "ให้เพื่อเสริมความยืดยาวแก่การแต่งงาน" ,"Price": 259 ,"รูป": "/pj6.jpg" },
+        { "id": 7, "Dessert": "เม็ดขนุน","Mean": "มีคนช่วยสนับสนุนค้ำจุนในหน้าที่การงาน การดำเนินชีวิต ไม่ว่าจะประกอบกิจการใดๆ ก็จะประสบผลสำเร็จ","Popular": "ให้เพื่อค้ำจุน" ,"Price": 199 ,"รูป": "/pj7.jpg" },
+        { "id": 8, "Dessert": "กลีบลำดวน","Mean": "ช่วยทำให้มีชื่อเสียงขจรขจายและยังมีสร้างความงดงามให้กับคู่ชีวิต","Popular": "ใช้ในงานมงคล" ,"Price": 259 ,"รูป": "/pj8.jpg" },
+        { "id": 9, "Dessert": "ถ้วยฟู","Mean": "ความเป็นสิริมงคลและความเจริญก้าวหน้าของชีวิตคู่ หรืออวยพรให้รุ่งเรืองเฟื่องฟูเหมือนขนมถ้วยฟู","Popular": "ใช้ในงานมงคลต่างๆ นำมาใช้ในพิธีแต่งงาน" ,"Price": 99 ,"รูป": "/pj9.jpg" },
+        { "id": 10, "Dessert": "เสน่ห์จันทน์","Mean": "การเป็นที่รักของทุกคน ไปไหนก็มีแต่คนรักใคร่ และความมีเสน่ห์","Popular": "ให้เพื่อเสริมความมีเสน่ห์" ,"Price": 359 ,"รูป": "/pj10.jpg" },
+        { "id": 11, "Dessert": "กงหรือขนมกงเกวียน","Mean": "การอวยพรให้บ่าวสาวครองรักกันชั่วนิรันดร์","Popular": "ให้ในงานมงคลเพื่ออวยพรให้บ่าวสาว" ,"Price": 159 ,"รูป": "/pj11.jpg" },
+        { "id": 12, "Dessert": "สามเกลอ","Mean": "ความสามัคคีและไม่มีวันพรากจากกัน","Popular": "ใช้เป็นขนมเสี่ยงทายในงานแต่ง" ,"Price": 259 ,"รูป": "/pj12.jpg" },
+        { "id": 13, "Dessert": "ข้าวเหนียวแก้ว","Mean": "จะมีแต่ความเหนียวแน่น เป็นปึกแผ่นมั่นคง","Popular": "ใช้ในงานมงคลชีวิต" ,"Price": 199 ,"รูป": "/pj13.jpg" },
+        { "id": 14, "Dessert": "โพรงแสม","Mean": "เปรียบเสมือนเสาบ้านที่จะทำให้บ่าวสาวอยู่กันได้ยั่งยืนตลอดไป","Popular": "ใช้เป็นขนมแต่งงานที่เก่าแก่ ในสมัยโบราณ" ,"Price": 159 ,"รูป": "/pj14.jpg" },
+        { "id": 15, "Dessert": "บุหลันดั้นเมฆ","Mean": "เลียนแบบเสมือนดวงจันทร์ลอยอยู่กลางท้องฟ้า","Popular": "ใช้เป็นขนมบุหลันดั้นเมฆนี้เป็นขนมเสี่ยงทาย เกี่ยวกับ หน้าที่การงาน" ,"Price": 199 ,"รูป": "/pj15.jpg" }
       ]
     }
   
   
   router
-    .route("/students")
+    .route("/thaidesserts")
     .get((req, res) => {
-      res.send(students);
+      res.send(thaidesserts);
     })
     .post((req, res) => {
       console.log(req.body);
-      let newstudent = {};
-      newstudent.id = students.list.length ? students.list[students.list.length - 1].id + 1 : 1;
-      newstudent.Dessert = req.body.Dessert;
-      newstudent.Mean= req.body.Mean;
-      newstudent.Popular = req.body.Popular;
-      newstudent.Price= req.body.Price;
-      students = { list: [...students.list, newstudent] };
-      res.json(students);
+      let newthaidessert = {};
+      newthaidessert.id = thaidesserts.list.length ? thaidesserts.list[thaidesserts.list.length - 1].id + 1 : 1;
+      newthaidessert.Dessert = req.body.Dessert;
+      newthaidessert.Mean= req.body.Mean;
+      newthaidessert.Popular = req.body.Popular;
+      newthaidessert.Price= req.body.Price;
+      thaidesserts = { list: [...thaidesserts.list, newthaidessert] };
+      res.json(thaidesserts);
     });
   
   router
-    .route("/students/:studentid")
+    .route("/thaidesserts/:thaidessertid")
     .get((req, res) => {
-      let id = students.list.findIndex((item) => +item.id == +req.params.studentid)
-      res.json(students.list[id]);
+      let id = thaidesserts.list.findIndex((item) => +item.id == +req.params.thaidessertid)
+      res.json(thaidesserts.list[id]);
     })
     .put((req, res) => {
-      let id = students.list.findIndex((item) => item.id == +req.params.studentid);
-      students.list[id].Dessert = req.body.Dessert;
-      students.list[id].Mean = req.body.Mean;
-      students.list[id].Popular = req.body.Popular;
-      students.list[id].Price = req.body.Price;
-      res.json(students.list);
+      let id = thaidesserts.list.findIndex((item) => item.id == +req.params.thaidessertid);
+      thaidesserts.list[id].Dessert = req.body.Dessert;
+      thaidesserts.list[id].Mean = req.body.Mean;
+      thaidesserts.list[id].Popular = req.body.Popular;
+      thaidesserts.list[id].Price = req.body.Price;
+      res.json(thaidesserts.list);
     })
     .delete((req, res) => {
-      students.list = students.list.filter((item) => +item.id !== +req.params.studentid);
-      res.json(students.list);
+      thaidesserts.list = thaidesserts.list.filter((item) => +item.id !== +req.params.thaidessertid);
+      res.json(thaidesserts.list);
     });
   
   
-  router.route("/purchase/:studentId")
+  router.route("/purchase/:thaidessertId")
   .post((req,res) => {
-    let id = students.list.findIndex((item) => +item.id == +req.params.studentId)
+    let id = thaidesserts.list.findIndex((item) => +item.id == +req.params.thaidessertId)
     if (id == -1) {
-      res.json({message: "Student not found"})
+      res.json({message: "thaidessert not found"})
     }
     else {
-      students.list = students.list.filter((item) => +item.id !== +req.params.studentId);
-      res.json(students.list);
+      thaidesserts.list = thaidesserts.list.filter((item) => +item.id !== +req.params.thaidessertId);
+      res.json(thaidesserts.list);
     }
   })
 

@@ -19,7 +19,7 @@ export default function Login({ token }) {
       console.log("result.data:  ", result.data);
       console.log("token:  ", token);
       setStatus(result.status + ": " + result.data.user.username);
-      Router.push("/studentedit");
+      Router.push("/thaidessertedit");
     } 
     catch (e) {
       console.log("error: ", JSON.stringify(e.response));
