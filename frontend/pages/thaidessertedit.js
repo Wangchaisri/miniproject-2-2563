@@ -15,10 +15,33 @@ const admin = ({ token }) => {
   const [Popular, setPopular] = useState("");
   const [Price, setPrice] = useState(0);
   const [thaidessert, setThaidessert] = useState({});
+
+  const [imageUrl, setImageUrl] = useState();
+  
+  const handleChangeImage = e => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      setImageUrl(e.target.result)
+    }
+
+    if (file)
+      reader.readAsDataURL(file);
+  }
+  // const [thaidessert, setThaidesserts] = useState({});
+  // useEffect(() => {
+  //   setImageUrl();
+  //   getThaidesserts();
+  //   profileUser();
+  // }, []);
+
   useEffect(() => {
+    setImageUrl();
     getThaidesserts();
     profileUser();
   }, []);
+
   const profileUser = async () => {
     try {
       
@@ -49,6 +72,7 @@ const admin = ({ token }) => {
       Mean,
       Popular,
       Price,
+      imageUrl,
     });
     console.log(result);
     getThaidesserts();
@@ -65,6 +89,7 @@ const admin = ({ token }) => {
       Mean,
       Popular,
       Price,
+      imageUrl,
     });
     console.log(result);
     getThaidesserts();
@@ -78,8 +103,8 @@ const admin = ({ token }) => {
         {/* lg ขนาด 15/3=4ต้องการให้มีกี่เอาตัวเลขแถวมาหาร, col  */}
           <div className={styles.listItem} key={index}>
             <b>ชื่อขนมไทย:</b> {item.Dessert} <br />
-            <Image src={item.รูป} alt="me" width="500" height="500" />
-
+            {/* <Image src={item.imageUrl} alt="me" width="500" height="500" /> */}
+            <div><img src={item.imageUrl } style={{ width: "690px", height: "400px" }} /></div>
             <b>หมายถึง:</b> {item.Mean} <br />
             <b>นิยม:</b> {item.Popular} <br />
             <b>ราคา:</b> {item.Price} ฿
@@ -123,6 +148,10 @@ const admin = ({ token }) => {
           name="ชื่อขนมไทย"
           onChange={(e) => setDessert(e.target.value)}
         ></input>
+        <label className='form-control'>
+          <img className='image' src={imageUrl} />
+          <input className='input-file' type='file' onChange={handleChangeImage} />
+        </label>
         หมายถึง:
         <input
           type="text"
@@ -143,18 +172,19 @@ const admin = ({ token }) => {
         ></input>฿
         <button
           className={styles.button_add}
-          onClick={() => addThaidessert(Dessert, Mean, Popular, Price)}
+          onClick={() => addThaidessert(Dessert, Mean, Popular, Price, imageUrl)}
         >
           Add
         </button>
       </div>
 
       <Row><div className={styles.list}>{showThaidesserts()}</div></Row>
-      <div className={styles.list1}><b><i><ins>(Selected Thai Dessert)</ins></i></b> <b>  ชื่อขนมไทย:</b>{thaidessert.Dessert}<b>  หมายถึง:</b>{thaidessert.Mean} <b>  นิยม:</b>{thaidessert.Popular}  <b>ราคา:</b>{thaidessert.Price}  </div>
+      {/* <div className={styles.list1}><b><i><ins>(Selected Thai Dessert)</ins></i></b> <b>  ชื่อขนมไทย:</b>{thaidessert.Dessert}<b>  หมายถึง:</b>{thaidessert.Mean} <b>  นิยม:</b>{thaidessert.Popular}  <b>ราคา:</b>{thaidessert.Price}  </div> */}
     </div>
   );
 };
 export default withAuth(admin);
+
 
 export function getServerSideProps({ req, res }) {
   return { props: { token: req.cookies.token || "" } };
