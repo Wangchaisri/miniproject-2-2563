@@ -31,7 +31,7 @@ const index = ({ token }) => {
         {/* lg ขนาด 15/3=4ต้องการให้มีกี่เอาตัวเลขแถวมาหาร, col  */}
           <div className={styles.listItem} key={index}>
             <div><b>ชื่อขนมไทย:</b> {item.Dessert}</div>
-            <Image src={item['imageUrl']} alt="me" width="144" height="144" />
+            <Image src={item['imageUrl']} alt="me" width="250" height="200" />
 
             <div><b>หมายถึง:</b> {item.Mean}</div>
              <div> <b>นิยม:</b> {item.Popular} </div>
@@ -53,7 +53,7 @@ const index = ({ token }) => {
       return <p>Loading...</p>;
     }
   };
-  return (
+  return ( 
     <Layout>
        <Head>
         <title>Thai Dessert by RoseBenz</title>

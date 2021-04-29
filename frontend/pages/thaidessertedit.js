@@ -16,7 +16,6 @@ const admin = ({ token }) => {
   const [Popular, setPopular] = useState("");
   const [Price, setPrice] = useState(0);
   const [thaidessert, setThaidessert] = useState({});
-
   const [imageUrl, setImageUrl] = useState();
   
   const handleChangeImage = e => {
@@ -99,7 +98,7 @@ const admin = ({ token }) => {
           <div className={styles.listItem} key={index}>
             <b>ชื่อขนมไทย:</b> {item.Dessert} <br />
             {/* <Image src={item.imageUrl} alt="me" width="500" height="500" /> */}
-            <div><img src={item.imageUrl } style={{ width: "690px", height: "400px" }} /></div>
+            <div><img src={item.imageUrl } style={{ width: "680px", height: "400px" }} /></div>
             <b>หมายถึง:</b> {item.Mean} <br />
             <b>นิยม:</b> {item.Popular} <br />
             <b>ราคา:</b> {item.Price} ฿
