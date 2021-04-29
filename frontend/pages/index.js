@@ -27,7 +27,7 @@ const index = ({ token }) => {
       return data.list.map((item, index) => {
         console.log(item)
         return (
-        <Col className="col-lg-4 col-15">     
+        <Col className="col-lg-10 col-15">     
         {/* lg ขนาด 15/3=4ต้องการให้มีกี่เอาตัวเลขแถวมาหาร, col  */}
           <div className={styles.listItem} key={index}>
             <div><b>ชื่อขนมไทย:</b> {item.Dessert}</div>
@@ -35,15 +35,11 @@ const index = ({ token }) => {
 
             <div><b>หมายถึง:</b> {item.Mean}</div>
              <div> <b>นิยม:</b> {item.Popular} </div>
-            <div><b>ราคา:</b> {item.Price} ฿</div>
+            <div><b>ส่วนผสม:</b> {item.Ingredient} </div>
+            <div><b>ขั้นตอนการทำ:</b> {item.Procedure} </div>
             
             <div>
-            <button
-              className={styles.btn}
-              onClick={() => selStu(item.id)}
-            >
-              Select
-            </button>
+            
             </div>
           </div>
           </Col>
@@ -60,7 +56,7 @@ const index = ({ token }) => {
     </Head>
     <div className={styles.container}><Navbar token={token}/>
       <div className={styles.title}>
-      <marquee bgcolor="#33CC66" direction="lefe" scrollamount="5" width="100%"><ins>Welcome to Thai Dessert by RoseBenz</ins></marquee></div>
+      <marquee bgcolor="#33CC66" direction="lefe" scrollamount="5" width="100%"><ins>สูตรขนมไทยดั้งเดิม โดยแม่เบญ</ins></marquee></div>
       <div className={styles.list}>
         <Row>{showThaidesserts()}</Row>
       </div>

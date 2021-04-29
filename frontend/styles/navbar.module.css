@@ -1,11 +1,20 @@
 .Navbar  {
-    min-height: 50px;
-    width: 100%;
-    display: flex; 
-    justify-content: right;
-    align-items: right;
-    font-size: 22px;
-    color : red;
-    background-color :rgb(41, 104, 44);
-    font-family: 'Courier New', Courier, monospace;
-  }
+  padding: 1rem;
+  min-height: 50px;
+  width: 100%;
+  display: flex; 
+  justify-content: right;
+  align-items: right;
+  font-size: 22px;
+  color : red;
+  background-color :rgba(41, 104, 44, 0.767);
+}
+
+.Backgound_menu {
+  border-radius: 5px;
+  border: 1px solid rgb(8, 10, 4);
+  margin: 0.5rem;
+  padding: 0.5rem;
+  color: #000000;
+  text-decoration: none;
+}

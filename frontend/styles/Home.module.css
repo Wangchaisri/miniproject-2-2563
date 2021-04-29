@@ -8,6 +8,26 @@
     background-image: url(../styles/img/b55.jpg);
 }
 
+.contain {
+    min-height: 100vh;
+    /* padding: 0 0.5rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../styles/img/hdhd.jpg);
+}
+
+.pad_lr {
+    padding: 0rem 10rem;
+}
+.text_de {
+    text-indent: 3rem;
+}
+.text_margin {
+    margin-top: 1rem;
+}
+
 .content {
     min-width: 25vw;
 }

@@ -14,7 +14,8 @@ const admin = ({ token }) => {
   const [Dessert, setDessert] = useState("");
   const [Mean, setMean] = useState("");
   const [Popular, setPopular] = useState("");
-  const [Price, setPrice] = useState(0);
+  const [Ingredient, setIngredient] = useState(0);
+  const [Procedure, setProcedure] = useState(0);
   const [thaidessert, setThaidessert] = useState({});
   const [imageUrl, setImageUrl] = useState();
   
@@ -65,7 +66,8 @@ const admin = ({ token }) => {
       Dessert,
       Mean,
       Popular,
-      Price,
+      Ingredient,
+      Procedure,
       imageUrl,
     });
     console.log(result);
@@ -82,7 +84,8 @@ const admin = ({ token }) => {
       Dessert,
       Mean,
       Popular,
-      Price,
+      Ingredient,
+      Procedure,
       imageUrl,
     });
     console.log(result);
@@ -101,7 +104,8 @@ const admin = ({ token }) => {
             <div><img src={item.imageUrl } style={{ width: "680px", height: "400px" }} /></div>
             <b>หมายถึง:</b> {item.Mean} <br />
             <b>นิยม:</b> {item.Popular} <br />
-            <b>ราคา:</b> {item.Price} ฿
+            <b>ส่วนผสม:</b> {item.Ingredient}
+            <b>ขั้นตอนการทำ:</b> {item.Procedure}
             <div className={styles.edit_button}>
               <button
                 className={styles.button_get}
@@ -158,27 +162,32 @@ const admin = ({ token }) => {
           name="นิยม"
           onChange={(e) => setPopular(e.target.value)}
         ></input>
-        ราคา:
+        ส่วนผสม:
         <input
-          type="number"
-          name="ราคา"
-          onChange={(e) => setPrice(e.target.value)}
-        ></input>฿
+          type="text"
+          name="ส่วนผสม"
+          onChange={(e) => setIngredient(e.target.value)}
+        ></input>
+        ขั้นตอนการทำ:
+        <input
+          type="text"
+          name="ขั้นตอนการทำ"
+          onChange={(e) => setProcedure(e.target.value)}
+        ></input>
         <button
           className={styles.button_add}
-          onClick={() => addThaidessert(Dessert, Mean, Popular, Price, imageUrl)}
+          onClick={() => addThaidessert(Dessert, Mean, Popular, Ingredient, Procedure, imageUrl)}
         >
           Add
         </button>
       </div>
 
       <Row><div className={styles.list}>{showThaidesserts()}</div></Row>
-      {/* <div className={styles.list1}><b><i><ins>(Selected Thai Dessert)</ins></i></b> <b>  ชื่อขนมไทย:</b>{thaidessert.Dessert}<b>  หมายถึง:</b>{thaidessert.Mean} <b>  นิยม:</b>{thaidessert.Popular}  <b>ราคา:</b>{thaidessert.Price}  </div> */}
+      {/* <div className={styles.list1}><b><i><ins>(Selected Thai Dessert)</ins></i></b> <b>  ชื่อขนมไทย:</b>{thaidessert.Dessert}<b>  หมายถึง:</b>{thaidessert.Mean} <b>  นิยม:</b>{thaidessert.Popular}  <b>ส่วนผสม:</b>{thaidessert.Ingredient}  </div> */}
     </div>
   );
 };
 export default withAuth(admin);
-
 
 export function getServerSideProps({ req, res }) {
   return { props: { token: req.cookies.token || "" } };

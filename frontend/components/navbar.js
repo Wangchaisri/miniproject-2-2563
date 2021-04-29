@@ -1,15 +1,17 @@
 import Link from 'next/link'
 import styles from "../styles/navbar.module.css"
+import Image from 'next/image';
 
 const Navbar = ({token}) => (
     <div className = {styles.Navbar}>
-        <Link href="/"><a> <b>Home Page</b></a></Link> |
-        <Link href="/order"><a> <b>Order</b></a></Link> |
-        <Link href="/profile"><a> <b>Profile</b> </a></Link> | 
-        { token && <span><Link href="/thaidessertedit"><a> <b>Thai Dessert Edit</b> </a></Link> |</span> }
-        <Link href="/getConfig"><a><b> Contact Us</b> </a></Link> 
-        |<Link href="/login"><a> <b class = "text-danger">Admin Login</b></a></Link>
-        { token && <span>|<Link href="/logout"><a><b>Logout</b> </a></Link> </span> }
+        <Image src="/s.jpg" alt="me" width="68" height="40" />
+        <Link href="/"><a className={styles.Backgound_menu}> <b>Home Page</b></a></Link>
+        <Link href="/profile"><a className={styles.Backgound_menu}> <b>Profile</b> </a></Link>
+        <Link href="/order"><a className={styles.Backgound_menu}> <b>Thai Dessert</b></a></Link>
+        { token && <span className={styles.Backgound_menu}><Link href="/thaidessertedit"><a> <b>Edit</b> </a></Link></span> }
+        <Link href="/getConfig"><a className={styles.Backgound_menu}><b> Contact Us</b> </a></Link> 
+        <Link href="/login"><a className={styles.Backgound_menu}> <b class = "text-danger">Admin Login</b></a></Link>
+        { token && <span className={styles.Backgound_menu}><Link href="/logout"><a><b>Logout</b> </a></Link> </span> }
     </div>
 )
 
