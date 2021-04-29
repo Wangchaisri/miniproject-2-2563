@@ -140,6 +140,7 @@ router.get("/", (req, res, next) => {
       newthaidessert.Mean= req.body.Mean;
       newthaidessert.Popular = req.body.Popular;
       newthaidessert.Price= req.body.Price;
+      newthaidessert.imageUrl= req.body.imageUrl;
       thaidesserts = { list: [...thaidesserts.list, newthaidessert] };
       res.json(thaidesserts);
     });
@@ -156,6 +157,7 @@ router.get("/", (req, res, next) => {
       thaidesserts.list[id].Mean = req.body.Mean;
       thaidesserts.list[id].Popular = req.body.Popular;
       thaidesserts.list[id].Price = req.body.Price;
+      thaidesserts.list[id].imageUrl = req.body.imageUrl;
       res.json(thaidesserts.list);
     })
     .delete((req, res) => {

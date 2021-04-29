@@ -25,12 +25,13 @@ const index = () => {
   const showThaidesserts = () => {
     if (data.list && data.list.length) {
       return data.list.map((item, index) => {
+        console.log(item)
         return (
         <Col className="col-lg-4 col-15">     
         {/* lg ขนาด 15/3=4ต้องการให้มีกี่เอาตัวเลขแถวมาหาร, col  */}
           <div className={styles.listItem} key={index}>
             <div><b>ชื่อขนมไทย:</b> {item.Dessert}</div>
-            <Image src={item.รูป} alt="me" width="144" height="144" />
+            <Image src={item['imageUrl']} alt="me" width="144" height="144" />
 
             <div><b>หมายถึง:</b> {item.Mean}</div>
              <div> <b>นิยม:</b> {item.Popular} </div>

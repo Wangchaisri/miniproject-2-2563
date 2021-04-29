@@ -5,8 +5,9 @@ import withAuth from "../components/withAuth";
 import Navbar from "../components/navbar";
 import "bootstrap/dist/css/bootstrap.css";
 import { Container, Row, Col } from "react-bootstrap";
-import Image from 'next/image';
-const URL = "http://localhost/api/thaidesserts";
+import config from '../config/config'
+// import Image from 'next/image';
+const API_URL = "http://localhost/api/thaidesserts";
 const admin = ({ token }) => {
   const [user, setUser] = useState({});
   const [thaidesserts, setThaidesserts] = useState({});
@@ -20,14 +21,8 @@ const admin = ({ token }) => {
   
   const handleChangeImage = e => {
     const file = e.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = (e) => {
-      setImageUrl(e.target.result)
-    }
-
-    if (file)
-      reader.readAsDataURL(file);
+    const imgUrl = URL.createObjectURL(file);
+    setImageUrl(imgUrl);    //ดึงข้อมูล url มาได้เลย
   }
   // const [thaidessert, setThaidesserts] = useState({});
   // useEffect(() => {
@@ -56,18 +51,18 @@ const admin = ({ token }) => {
   };
 
   const getthaidessert = async (id) => {
-    const result = await axios.get(`${URL}/${id}`)
+    const result = await axios.get(`${API_URL}/${id}`)
     console.log('thaidessert id: ', result.data)
     setThaidessert(result.data)
 }
  
   const getThaidesserts = async () => {
-    let result = await axios.get(URL);
+    let result = await axios.get(API_URL);
     setThaidesserts(result.data.list);
   };
 
   const addThaidessert = async () => {
-    let result = await axios.post(URL, {
+    let result = await axios.post(API_URL, {
       Dessert,
       Mean,
       Popular,
@@ -79,12 +74,12 @@ const admin = ({ token }) => {
   };
 
   const deleteThaidessert = async (id) => {
-    let result = await axios.delete(`${URL}/${id}`);
+    let result = await axios.delete(`${API_URL}/${id}`);
     getThaidesserts();
   };
 
   const updateThaidessert = async (id) => {
-    let result = await axios.put(`${URL}/${id}`, {
+    let result = await axios.put(`${API_URL}/${id}`, {
       Dessert,
       Mean,
       Popular,
