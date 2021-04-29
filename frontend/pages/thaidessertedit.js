@@ -133,7 +133,7 @@ const admin = ({ token }) => {
   };
   return (
     <div className={styles.container}>
-      <Navbar />
+      <Navbar token={token}/>
       <h1><ins>Thai Dessert Data Edit </ins></h1>
       <div className={styles.form_add}>
         <h2>Add Thai Dessert</h2>

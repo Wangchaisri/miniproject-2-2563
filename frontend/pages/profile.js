@@ -36,7 +36,7 @@ const Profile1 = ({ token }) => {
                 <title>ขนมไทย</title>
             </Head>
             <div className={styles.container}>
-                <Navbar />
+                <Navbar token={token}/>
                 <h1>ขนมไทย</h1>
                 <div>
                     <b>Token:</b> {token.substring(0, 15)}... <br /><br />

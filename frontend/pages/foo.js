@@ -36,7 +36,7 @@ const Foo1 = ({ token }) => {
                 <title>User foo</title>
             </Head>
             <div className={styles.container}>
-                <Navbar />
+                <Navbar token={token}/>
                 <h1>User foo</h1>
                 <div>
                     <b>Token:</b> {token.substring(0, 15)}... <br /><br />

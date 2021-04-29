@@ -73,7 +73,7 @@ export default function Login({ token }) {
         <title>Login Page</title>
       </Head>
       <div className={styles.container}>
-        <Navbar />
+        <Navbar token={token}/>
         <h1>Login</h1>
         <div>
           <b>Token:</b> {token.substring(0, 15)}...

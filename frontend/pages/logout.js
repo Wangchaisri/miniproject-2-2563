@@ -26,7 +26,7 @@ export default function Logout({ token }) {
                 <title>Logout Page</title>
             </Head>
             <div className={styles.container}>
-                <Navbar />
+                <Navbar token={token}/>
                 <h1>Logout</h1>
                 <div>
                     <h2> {status}  </h2>
@@ -35,3 +35,7 @@ export default function Logout({ token }) {
         </Layout>
     )
 }
+
+export function getServerSideProps({ req, res }) {
+    return { props: { token: req.cookies.token || "" } };
+  }

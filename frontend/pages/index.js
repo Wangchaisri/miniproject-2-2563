@@ -11,7 +11,7 @@ import Image from 'next/image';
 const URL = "http://localhost/api/thaidesserts";
 const URL_SEL = "http://localhost/api/purchase";
 const fetcher = (key) => fetch(key).then((res) => res.json());
-const index = () => {
+const index = ({ token }) => {
   const { data, error } = useSWR(URL, fetcher, { revalidateOnFocus: false });
   if (error) return <div>failed to load</div>;
   if (!data) return <div>Loading...</div>;
@@ -58,7 +58,7 @@ const index = () => {
        <Head>
         <title>Thai Dessert by RoseBenz</title>
     </Head>
-    <div className={styles.container}><Navbar />
+    <div className={styles.container}><Navbar token={token}/>
       <div className={styles.title}>
       <marquee bgcolor="#33CC66" direction="lefe" scrollamount="5" width="100%"><ins>Welcome to Thai Dessert by RoseBenz</ins></marquee></div>
       <div className={styles.list}>
@@ -69,3 +69,7 @@ const index = () => {
   );
 };
 export default index;
+
+export function getServerSideProps({ req, res }) {
+  return { props: { token: req.cookies.token || "" } };
+}

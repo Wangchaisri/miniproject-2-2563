@@ -17,3 +17,7 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+
+export function getServerSideProps({ req, res }) {
+  return { props: { token: req.cookies.token || "" } };
+}

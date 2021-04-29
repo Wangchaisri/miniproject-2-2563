@@ -4,13 +4,13 @@ import config from '../config/config'
 import styles from '../styles/Home.module.css'
 import Navbar from '../components/navbar'
 
-const GetConfig = () => {
+const GetConfig = ({ token }) => {
     return (<Layout>
         <Head>
             <title>Get Config</title>
         </Head>
         <div className={styles.container}>
-            <Navbar />
+            <Navbar token={token}/>
             <h2> Get Configuration from ../config/config.js </h2>
             <b>Config: </b> {JSON.stringify(config)}
             <ul>
@@ -23,3 +23,7 @@ const GetConfig = () => {
 }
 
 export default GetConfig
+
+export function getServerSideProps({ req, res }) {
+    return { props: { token: req.cookies.token || "" } };
+  }
