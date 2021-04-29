@@ -6,8 +6,10 @@ import styles from '../styles/Home.module.css'
 import axios from 'axios'
 import withAuth from '../components/withAuth'
 import config from '../config/config'
+import "bootstrap/dist/css/bootstrap.css";
+import { Container, Row, Col } from "react-bootstrap";
 
-const Profile1 = ({ token }) => {
+const Profile1 = () => {
 
     const [user, setUser] = useState({})
 
@@ -36,10 +38,9 @@ const Profile1 = ({ token }) => {
                 <title>ขนมไทย</title>
             </Head>
             <div className={styles.container}>
-                <Navbar token={token}/>
+                <Navbar/>
                 <h1>ขนมไทย</h1>
                 <div>
-                    <b>Token:</b> {token.substring(0, 15)}... <br /><br />
                     <b>ขนมไทย </b>
                     มีเอกลักษณ์ด้านวัฒนธรรมประจำชาติไทยคือ มีความละเอียดอ่อนประณีตในการเลือกสรรวัตถุดิบ วิธีการทำ ที่พิถีพิถัน รสชาติอร่อยหอมหวาน สีสันสวยงาม รูปลักษณ์ชวนรับประทาน ตลอดจนกรรมวิธีที่ประณีตบรรจง
                     <br/><br/>
@@ -68,14 +69,13 @@ const Profile1 = ({ token }) => {
                     <br/>
                     <li>ขนมที่ทำให้สุกด้วยการต้ม ขนมประเภทนี้จะใช้หม้อหรือกระทะต้มน้ำให้เดือด ใส่ขนมลงไปจนสุกแล้วตักขึ้น นำมาคลุกหรือโรยมะพร้าว ได้แก่ ขนมถั่วแปบ ขนมต้ม ขนมเหนียว ขนมเรไร นอกจากนี้ยังรวมขนมประเภทน้ำ ที่นิยมนำมาต้มกับกะทิ หรือใส่แป้งผสมเป็นขนมเปียก และขนมที่กินกับน้ำเชื่อมและน้ำกะทิ เช่น กล้วยบวชชี มันแกงบวด สาคูเปียก ลอดช่อง ซ่าหริ่ม</li>
                     <br/><br/>
-                    {JSON.stringify(user)}
                 </div>
             </div>
         </Layout>
     )
 }
 
-export default withAuth(Profile1)
+export default Profile1
 
 export function getServerSideProps({ req, res }) {
     return { props: { token: req.cookies.token || "" } };

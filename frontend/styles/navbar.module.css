@@ -1,11 +1,11 @@
 .Navbar  {
     min-height: 50px;
     width: 100%;
-     display: flex; 
+    display: flex; 
     justify-content: right;
     align-items: right;
     font-size: 22px;
     color : red;
-    background-color :rgb(3, 3, 3);
+    background-color :rgb(41, 104, 44);
     font-family: 'Courier New', Courier, monospace;
   }
