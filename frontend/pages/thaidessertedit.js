@@ -101,7 +101,7 @@ const admin = ({ token }) => {
           <div className={styles.listItem} key={index}>
             <b>ชื่อขนมไทย:</b> {item.Dessert} <br />
             {/* <Image src={item.imageUrl} alt="me" width="500" height="500" /> */}
-            <div><img src={item.imageUrl } style={{ width: "680px", height: "400px" }} /></div>
+            <div><img src={item.imageUrl } style={{ width: "630px", height: "350px" }} /></div>
             <b>หมายถึง:</b> {item.Mean} <br />
             <b>นิยม:</b> {item.Popular} <br />
             <b>ส่วนผสม:</b> {item.Ingredient}
@@ -183,7 +183,7 @@ const admin = ({ token }) => {
       </div>
 
       <Row><div className={styles.list}>{showThaidesserts()}</div></Row>
-      {/* <div className={styles.list1}><b><i><ins>(Selected Thai Dessert)</ins></i></b> <b>  ชื่อขนมไทย:</b>{thaidessert.Dessert}<b>  หมายถึง:</b>{thaidessert.Mean} <b>  นิยม:</b>{thaidessert.Popular}  <b>ส่วนผสม:</b>{thaidessert.Ingredient}  </div> */}
+      <div className={styles.list1}><b><i><ins>(Selected Thai Dessert)</ins></i></b> <b>  ชื่อขนมไทย:</b>{thaidessert.Dessert}<b>  หมายถึง:</b>{thaidessert.Mean} <b>  นิยม:</b>{thaidessert.Popular}  <b>ส่วนผสม:</b>{thaidessert.Ingredient}  </div>
     </div>
   );
 };
