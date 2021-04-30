@@ -20,6 +20,9 @@
 
 .pad_lr {
     padding: 0rem 10rem;
+    font-size: 18px;
+    margin: 4px 2px;
+    /* cursor: pointer; */
 }
 .text_de {
     text-indent: 3rem;

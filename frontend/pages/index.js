@@ -27,19 +27,16 @@ const index = ({ token }) => {
       return data.list.map((item, index) => {
         console.log(item)
         return (
-        <Col className="col-lg-10 col-15">     
+        <Col className="col-lg-12 col-12">     
         {/* lg ขนาด 15/3=4ต้องการให้มีกี่เอาตัวเลขแถวมาหาร, col  */}
           <div className={styles.listItem} key={index}>
             <div><b>ชื่อขนมไทย:</b> {item.Dessert}</div>
-            <Image src={item['imageUrl']} alt="me" width="680" height="400" />
-
+            <Image src={item['imageUrl']} alt="me" width="780" height="500" />
             <div><b>หมายถึง:</b> {item.Mean}</div>
              <div> <b>นิยม:</b> {item.Popular} </div>
             <div><b>ส่วนผสม:</b> {item.Ingredient} </div>
             <div><b>ขั้นตอนการทำ:</b> {item.Procedure} </div>
-            
             <div>
-            
             </div>
           </div>
           </Col>

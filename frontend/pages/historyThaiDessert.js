@@ -9,7 +9,7 @@ import config from '../config/config'
 import "bootstrap/dist/css/bootstrap.css";
 import Image from 'next/image';
 
-const Order1 = () => {
+const HistoryThaiDessert1 = () => {
 
     const [user, setUser] = useState({})
 
@@ -35,7 +35,7 @@ const Order1 = () => {
     return (
         <Layout>
             <Head>
-                <title>Profile</title>
+                <title>History Thai Dessert</title>
             </Head>
                 <Navbar/>
                 <div className={styles.contain}>
@@ -76,7 +76,7 @@ const Order1 = () => {
     )
 }
 
-export default Order1
+export default HistoryThaiDessert1
 
 export function getServerSideProps({ req, res }) {
     return { props: { token: req.cookies.token || "" } };
